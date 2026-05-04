@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* One full scrollable page */
+.portfolio-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background image stays behind the whole page */
+.background {
+  position: fixed;
+  inset: 0;
+  background-image: url("Website BG Image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88%;
+  max-width: 1200px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 34px;
+  border-radius: 999px;
+
+  background-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+
+  z-index: 10;
+}
+
+.logo {
+  font-family: "Zen Antique Soft", serif;
+  font-size: 1.7rem;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 34px;
+}
+
+.nav-links a {
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.75;
+}
+
+/* Shared section styling */
+.section {
+  min-height: 100vh;
+  position: relative;
+  padding: 120px 7%;
+}
+
+/* Hero */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: "Zen Antique Soft", serif;
+  font-size: clamp(3.8rem, 8vw, 6.8rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+
+.hero-content p {
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.9rem);
+  font-weight: 700;
+  color: white;
+  margin-top: 10px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* About */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.about-title-box,
+.about-text-box {
+  background-color: rgba(190, 204, 91, 0.88);
+}
+
+.about-title-box {
+  padding: 30px 55px;
+}
+
+.about-title-box h2 {
+  font-family: "Zen Antique Soft", serif;
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  font-weight: 400;
+  color: white;
+  white-space: nowrap;
+}
+
+.about-text-box {
+  max-width: 650px;
+  padding: 28px 32px;
+}
+
+.about-text-box p {
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: white;
+}
+
+/* Placeholder sections */
+.placeholder-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-section h2 {
+  font-family: "Zen Antique Soft", serif;
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  font-weight: 400;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .navbar {
+    width: 92%;
+    padding: 0 22px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about-title-box {
+    padding: 24px 42px;
+  }
+
+  .about-text-box {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    height: auto;
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 24px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 22px;
+  }
+
+  .section {
+    padding: 140px 6%;
+  }
+}
