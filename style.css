@@ -133,17 +133,12 @@ body {
 
 /* About Me Title */
 .about-heading {
-  font-family: "Petit Formal Script", cursive;
-  font-size: clamp(3.8rem, 6.5vw, 6rem);
-  font-weight: 700;
+  font-family: "Zen Antique Soft", serif;
+  font-size: clamp(3.5rem, 6vw, 5.4rem);
+  font-weight: 400;
   color: #4f805c;
-  margin-bottom: 36px;
-
-  /* makes script font appear bolder */
-  -webkit-text-stroke: 0.35px #4f805c;
-  text-shadow:
-    1px 1px 0 rgba(79, 128, 92, 0.35),
-    0 3px 8px rgba(255, 255, 255, 0.55);
+  margin-bottom: 70px;
+  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.45);
 }
 
 /* Image + Text Row */
@@ -193,6 +188,34 @@ body {
   font-weight: 700;
   line-height: 1.45;
   color: #4f805c;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-section {
+    padding: 140px 6% 80px;
+  }
+
+  .about-heading {
+    margin-bottom: 34px;
+  }
+
+  .about-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-image-card {
+    width: 220px;
+    height: 270px;
+  }
+
+  .about-text-card {
+    max-width: 92%;
+    min-height: auto;
+    text-align: center;
+    padding: 30px 28px;
+  }
 }
 
 /* Responsive */
