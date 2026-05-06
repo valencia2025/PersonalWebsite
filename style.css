@@ -117,7 +117,6 @@ body {
 }
 
 /* About */
-/* About */
 .about-section {
   min-height: 100vh;
   display: flex;
@@ -136,7 +135,7 @@ body {
   font-family: "Zen Antique Soft", serif;
   font-size: clamp(3.5rem, 6vw, 5.4rem);
   font-weight: 400;
-  color: #4f805c;
+  color: white;
   margin-bottom: 70px;
   text-shadow: 0 2px 5px rgba(255, 255, 255, 0.45);
 }
