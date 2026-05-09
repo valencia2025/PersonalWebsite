@@ -24,16 +24,28 @@ body {
 .background {
   position: fixed;
   inset: 0;
+
   background-image: url("Website_BG_Image.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   opacity: 0.75;
   z-index: -1;
+
+  transition: background-image 0.4s ease, opacity 0.4s ease;
 }
+
+/* Dark mode background image */
+body.dark-mode .background {
+  background-image: url("night_bg.png");
+  opacity: 0.75;
+}
+
 
 /* Navbar */
 .navbar {
+  gap: 24px;
   position: fixed;
   top: 24px;
   left: 50%;
@@ -83,12 +95,52 @@ body {
   opacity: 0.75;
 }
 
+/* It switches between light mode and dark mode*/
+ 
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(248, 248, 230, 0.78);
+  color: #4f805c;
+
+  font-size: 1.25rem;
+  cursor: pointer;
+
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Button style when dark mode is active */
+body.dark-mode .theme-toggle {
+  background-color: rgba(15, 34, 62, 0.78);
+  color: #f8f6e9;
+}
+
 /* Shared section styling */
 .section {
   min-height: 100vh;
   position: relative;
   padding: 120px 7%;
 }
+
 
 /* Hero */
 .hero-section {
@@ -133,15 +185,12 @@ body {
 
 /* About Me Title */
 .about-heading {
-  position: relative;
-  display: inline-block;
+
   font-family: "Zen Antique Soft", serif;
-  font-size: clamp(3.5rem, 6vw, 5.4rem);
-  font-weight: 700;
-  line-height: 1.1;
-  color: #4f805c;
-  margin-bottom: 52px;
-  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.45);
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  font-weight: 400;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
 }
 
 /* Image + Text Row */
@@ -330,4 +379,63 @@ body {
   .section {
     padding: 140px 6%;
   }
+}
+
+/* =========================================================
+   RESPONSIVE THEME TOGGLE
+   - Makes the button slightly smaller on mobile screens
+========================================================= */
+
+@media (max-width: 650px) {
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+
+/* DARK MODE STYLES
+   - JavaScript will add/remove the .dark-mode class*/
+
+/* Dark mode navbar */
+body.dark-mode .navbar {
+  background-color: rgba(10, 25, 50, 0.38);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+/* Dark mode navbar text */
+body.dark-mode .logo,
+body.dark-mode .nav-links a {
+  color: #f8f6e9;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Dark mode hero text */
+body.dark-mode .hero-content h1,
+body.dark-mode .hero-content p {
+  color: #f8f6e9;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* Dark mode About Me title */
+body.dark-mode .about-heading {
+  color: #f8f6e9;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* Dark mode image card */
+body.dark-mode .about-image-card {
+  background-color: rgba(248, 246, 233, 0.9);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+
+/* Dark mode text card */
+body.dark-mode .about-text-card {
+  background-color: rgba(248, 248, 230, 0.9);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+
+/* Dark mode paragraph text */
+body.dark-mode .about-text-card p {
+  color: #355d74;
 }
