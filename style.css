@@ -444,7 +444,7 @@ body.dark-mode .about-text-card p {
    SKILLS SECTION
    - Skills title stays in the center
    - Skill cards move around the title in an infinity loop
-   - The cards follow a sideways figure-eight path
+   - JS drives the animation via parametric lemniscate math
 ========================================================= */
 
 .skills-section {
@@ -497,9 +497,14 @@ body.dark-mode .about-text-card p {
   height: 520px;
 }
 
-/* Skill Card */
+/* Skill Card — JS sets --tx and --ty each frame */
 .skill-card {
   position: absolute;
+
+  /* Cards start at carousel center; JS offsets via transform */
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + var(--tx, 0px)), calc(-50% + var(--ty, 0px)));
 
   width: 92px;
   height: 92px;
@@ -515,38 +520,8 @@ body.dark-mode .about-text-card p {
 
   box-shadow: 0 4px 12px rgba(53, 88, 58, 0.18);
 
-  /*
-    offset-anchor: center makes the card's center (not top-left corner)
-    track along the path.
-  */
-  offset-anchor: center center;
-
-  /*
-    The path is expressed in the coordinate space of .infinity-carousel
-    (which is 1000px wide × 520px tall).
-    Center = (500, 260).
-
-    A lemniscate (figure-eight on its side) centered at (500, 260):
-      - half-width  ≈ 390px  → left lobe goes to x≈110, right lobe to x≈890
-      - half-height ≈ 150px  → top y≈110, bottom y≈410
-
-    The path starts at the center (500,260), sweeps the RIGHT lobe first
-    (matching the arrow diagram), then crosses back through center and
-    sweeps the LEFT lobe, returning to start.
-  */
-  offset-path: path(
-    "M 500,260
-     C 500,110  890,110  890,260
-     C 890,410  500,410  500,260
-     C 500,110  110,110  110,260
-     C 110,410  500,410  500,260"
-  );
-
-  /* Keep cards upright — don't rotate to follow path tangent */
-  offset-rotate: 0deg;
-
-  animation: infinityMove 28s linear infinite;
   z-index: 3;
+  will-change: transform;
 }
 
 .skill-card img {
@@ -568,41 +543,6 @@ body.dark-mode .about-text-card p {
   font-size: 2rem !important;
   color: #111 !important;
   line-height: 1;
-}
-
-/* Animation around the infinity path */
-@keyframes infinityMove {
-  from {
-    offset-distance: 0%;
-  }
-  to {
-    offset-distance: 100%;
-  }
-}
-
-/* 
-   Stagger each skill card so they are spread around the infinity path.
-   14 cards over a 28s animation = 2s apart each.
-   Negative delays pre-advance each card along the path.
-*/
-.skill-1  { animation-delay:   0s; }
-.skill-2  { animation-delay:  -2s; }
-.skill-3  { animation-delay:  -4s; }
-.skill-4  { animation-delay:  -6s; }
-.skill-5  { animation-delay:  -8s; }
-.skill-6  { animation-delay: -10s; }
-.skill-7  { animation-delay: -12s; }
-.skill-8  { animation-delay: -14s; }
-.skill-9  { animation-delay: -16s; }
-.skill-10 { animation-delay: -18s; }
-.skill-11 { animation-delay: -20s; }
-.skill-12 { animation-delay: -22s; }
-.skill-13 { animation-delay: -24s; }
-.skill-14 { animation-delay: -26s; }
-
-/* Pause animation on hover */
-.infinity-carousel:hover .skill-card {
-  animation-play-state: paused;
 }
 
 /* =========================================================
@@ -633,9 +573,8 @@ body.dark-mode .skill-card {
   }
 
   .infinity-carousel {
-    width: 760px;
+    width: min(760px, 95vw);
     height: 460px;
-    transform: scale(0.9);
   }
 
   .skill-card {
@@ -667,9 +606,8 @@ body.dark-mode .skill-card {
   }
 
   .infinity-carousel {
-    width: 640px;
+    width: min(640px, 95vw);
     height: 420px;
-    transform: scale(0.72);
   }
 
   .skills-title-card {
