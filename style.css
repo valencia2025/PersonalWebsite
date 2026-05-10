@@ -439,3 +439,278 @@ body.dark-mode .about-text-card {
 body.dark-mode .about-text-card p {
   color: #355d74;
 }
+
+/* =========================================================
+   SKILLS SECTION
+   - Skills title stays in the center
+   - Skill cards move around the title in an infinity loop
+   - The motion follows a sideways figure-eight path
+========================================================= */
+
+.skills-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 5% 90px;
+  overflow: hidden;
+}
+
+.skills-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center Skills Title */
+.skills-title-card {
+  position: absolute;
+  z-index: 5;
+
+  width: min(330px, 80%);
+  padding: 14px 30px;
+
+  background-color: rgba(248, 248, 230, 0.94);
+  border-radius: 10px;
+
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(53, 88, 58, 0.16);
+}
+
+.skills-title-card h2 {
+  font-family: "Zen Antique Soft", serif;
+  font-size: clamp(3.4rem, 6vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1;
+  color: #4f805c;
+}
+
+/* Infinity Carousel Area */
+.infinity-carousel {
+  position: relative;
+  width: min(1000px, 95vw);
+  height: 520px;
+}
+
+/* Skill Card */
+.skill-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 92px;
+  height: 92px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+
+  box-shadow: 0 4px 12px rgba(53, 88, 58, 0.16);
+
+  transform: translate(-50%, -50%);
+
+  animation: infinityMove 28s linear infinite;
+
+  /*
+    This creates the infinity-loop path.
+    The path is centered around the Skills card.
+  */
+  offset-path: path(
+    "M 500 260
+     C 420 120, 260 120, 200 260
+     C 260 400, 420 400, 500 260
+     C 580 120, 740 120, 800 260
+     C 740 400, 580 400, 500 260"
+  );
+
+  offset-rotate: 0deg;
+}
+
+.skill-card img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.skill-card span {
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  line-height: 1.05;
+}
+
+.vercel-logo {
+  font-size: 2rem !important;
+  color: #111 !important;
+  line-height: 1;
+}
+
+/* Animation around the infinity path */
+@keyframes infinityMove {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
+
+/* 
+   Stagger each skill card so they are spread around the infinity path.
+   Negative animation-delay makes them start at different positions.
+*/
+.skill-1 {
+  animation-delay: 0s;
+}
+
+.skill-2 {
+  animation-delay: -2s;
+}
+
+.skill-3 {
+  animation-delay: -4s;
+}
+
+.skill-4 {
+  animation-delay: -6s;
+}
+
+.skill-5 {
+  animation-delay: -8s;
+}
+
+.skill-6 {
+  animation-delay: -10s;
+}
+
+.skill-7 {
+  animation-delay: -12s;
+}
+
+.skill-8 {
+  animation-delay: -14s;
+}
+
+.skill-9 {
+  animation-delay: -16s;
+}
+
+.skill-10 {
+  animation-delay: -18s;
+}
+
+.skill-11 {
+  animation-delay: -20s;
+}
+
+.skill-12 {
+  animation-delay: -22s;
+}
+
+.skill-13 {
+  animation-delay: -24s;
+}
+
+.skill-14 {
+  animation-delay: -26s;
+}
+
+/* Pause animation on hover */
+.infinity-carousel:hover .skill-card {
+  animation-play-state: paused;
+}
+
+/* =========================================================
+   DARK MODE SKILLS STYLING
+========================================================= */
+
+body.dark-mode .skills-title-card {
+  background-color: rgba(248, 248, 230, 0.92);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .skills-title-card h2 {
+  color: #355d74;
+}
+
+body.dark-mode .skill-card {
+  background-color: rgba(248, 248, 230, 0.92);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+/* =========================================================
+   RESPONSIVE SKILLS SECTION
+========================================================= */
+
+@media (max-width: 900px) {
+  .skills-container {
+    min-height: 560px;
+  }
+
+  .infinity-carousel {
+    width: 760px;
+    height: 460px;
+    transform: scale(0.9);
+  }
+
+  .skill-card {
+    width: 82px;
+    height: 82px;
+  }
+
+  .skill-card img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .skill-card span {
+    font-size: 0.74rem;
+  }
+
+  .skills-title-card {
+    width: min(300px, 78%);
+  }
+}
+
+@media (max-width: 650px) {
+  .skills-section {
+    padding: 130px 0 80px;
+  }
+
+  .skills-container {
+    min-height: 520px;
+  }
+
+  .infinity-carousel {
+    width: 640px;
+    height: 420px;
+    transform: scale(0.72);
+  }
+
+  .skills-title-card {
+    width: min(250px, 75%);
+    padding: 12px 24px;
+  }
+
+  .skills-title-card h2 {
+    font-size: 3.3rem;
+  }
+
+  .skill-card {
+    width: 78px;
+    height: 78px;
+  }
+}

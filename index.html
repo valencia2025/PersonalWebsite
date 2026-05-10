@@ -35,20 +35,10 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <script>
-  const themeToggle = document.getElementById("theme-toggle");
-
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-      themeToggle.textContent = "☀️";
-    } else {
-      themeToggle.textContent = "🌙";
-    }
-  });
-</script>
-
+      <!-- Light/Dark Mode Toggle Button -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        🌙
+      </button>
     </nav>
 
     <!-- Hero Section -->
@@ -60,143 +50,143 @@
     </section>
 
     <!-- About Section -->
-<section id="about" class="section about-section">
-  <div class="about-container">
+    <section id="about" class="section about-section">
+      <div class="about-container">
 
-    <h2 class="about-heading">About Me</h2>
+        <h2 class="about-heading">About Me</h2>
 
-    <div class="about-row">
+        <div class="about-row">
 
-      <div class="about-image-card">
-        <img src="Portfolio_Image.png" alt="Portrait of Valencia Essoudasse">
+          <div class="about-image-card">
+            <img src="Portfolio_Image.png" alt="Portrait of Valencia Essoudasse">
+          </div>
+
+          <div class="about-text-card">
+            <p>
+              Hi there, my name is Valencia! I am a third-year Software
+              Engineering student at TMU with an interest in building
+              clean, scalable software. I am passionate about creating
+              projects that help people and solve real-world problems.
+              Outside of academics and coding, I like practicing calligraphy
+              and going on walks :D
+            </p>
+          </div>
+
+        </div>
+
       </div>
+    </section>
 
-      <div class="about-text-card">
-        <p>
-          Hi there, my name is Valencia! I am a third-year Software
-          Engineering student at TMU with an interest in building
-          clean, scalable software. I am passionate about creating
-          projects that help people and solve real-world problems.
-          Outside of academics and coding, I like practicing calligraphy
-          and going on walks :D
-        </p>
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="skills-container">
+
+        <div class="skills-title-card">
+          <h2>Skills</h2>
+        </div>
+
+        <div class="infinity-carousel">
+
+          <div class="skill-card skill-1">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo">
+            <span>React</span>
+          </div>
+
+          <div class="skill-card skill-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js logo">
+            <span>Node.js</span>
+          </div>
+
+          <div class="skill-card skill-3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo">
+            <span>GitHub</span>
+          </div>
+
+          <div class="skill-card skill-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo">
+            <span>Java</span>
+          </div>
+
+          <div class="skill-card skill-5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo">
+            <span>Python</span>
+          </div>
+
+          <div class="skill-card skill-6">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML logo">
+            <span>HTML</span>
+          </div>
+
+          <div class="skill-card skill-7">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo">
+            <span>CSS</span>
+          </div>
+
+          <div class="skill-card skill-8">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS logo">
+            <span>Tailwind</span>
+          </div>
+
+          <div class="skill-card skill-9">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo">
+            <span>PostgreSQL</span>
+          </div>
+
+          <div class="skill-card skill-10">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo">
+            <span>MySQL</span>
+          </div>
+
+          <div class="skill-card skill-11">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C logo">
+            <span>C</span>
+          </div>
+
+          <div class="skill-card skill-12">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo">
+            <span>JavaScript</span>
+          </div>
+
+          <div class="skill-card skill-13">
+            <span class="vercel-logo">▲</span>
+            <span>Vercel</span>
+          </div>
+
+          <div class="skill-card skill-14">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence logo">
+            <span>Confluence</span>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills" class="section skills-section">
-  <div class="skills-container">
-
-    <div class="skills-title-card">
-      <h2>Skills</h2>
-    </div>
-
-    <div class="infinity-carousel">
-
-      <div class="skill-card skill-1">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo">
-        <span>React</span>
-      </div>
-
-      <div class="skill-card skill-2">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js logo">
-        <span>Node.js</span>
-      </div>
-
-      <div class="skill-card skill-3">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo">
-        <span>GitHub</span>
-      </div>
-
-      <div class="skill-card skill-4">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo">
-        <span>Java</span>
-      </div>
-
-      <div class="skill-card skill-5">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo">
-        <span>Python</span>
-      </div>
-
-      <div class="skill-card skill-6">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML logo">
-        <span>HTML</span>
-      </div>
-
-      <div class="skill-card skill-7">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo">
-        <span>CSS</span>
-      </div>
-
-      <div class="skill-card skill-8">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS logo">
-        <span>Tailwind</span>
-      </div>
-
-      <div class="skill-card skill-9">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo">
-        <span>PostgreSQL</span>
-      </div>
-
-      <div class="skill-card skill-10">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo">
-        <span>MySQL</span>
-      </div>
-
-      <div class="skill-card skill-11">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C logo">
-        <span>C</span>
-      </div>
-
-      <div class="skill-card skill-12">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo">
-        <span>JavaScript</span>
-      </div>
-
-      <div class="skill-card skill-13">
-        <span class="vercel-logo">▲</span>
-        <span>Vercel</span>
-      </div>
-
-      <div class="skill-card skill-14">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence logo">
-        <span>Confluence</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- Placeholder sections for navbar links -->
+    <!-- Projects Section -->
     <section id="projects" class="section placeholder-section">
       <h2>Projects</h2>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section placeholder-section">
       <h2>Contact</h2>
     </section>
 
   </main>
 
+  <!-- JavaScript -->
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        themeToggle.textContent = "☀️";
+      } else {
+        themeToggle.textContent = "🌙";
+      }
+    });
+  </script>
+
 </body>
-
-<script>
-  const themeToggle = document.getElementById("theme-toggle");
-
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-      themeToggle.textContent = "☀️";
-    } else {
-      themeToggle.textContent = "🌙";
-    }
-  });
-</script>
-
 </html>
