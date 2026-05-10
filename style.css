@@ -447,6 +447,13 @@ body.dark-mode .about-text-card p {
    - The motion follows a sideways figure-eight path
 ========================================================= */
 
+/* =========================================================
+   SKILLS SECTION
+   - Skills title stays in the center
+   - Skill cards move around the title in an infinity loop
+   - The cards follow a sideways figure-eight path
+========================================================= */
+
 .skills-section {
   min-height: 100vh;
   display: flex;
@@ -512,28 +519,34 @@ body.dark-mode .about-text-card p {
   justify-content: center;
   gap: 6px;
 
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
 
-  box-shadow: 0 4px 12px rgba(53, 88, 58, 0.16);
-
-  transform: translate(-50%, -50%);
-
-  animation: infinityMove 28s linear infinite;
+  box-shadow: 0 4px 12px rgba(53, 88, 58, 0.18);
 
   /*
-    This creates the infinity-loop path.
-    The path is centered around the Skills card.
+    This moves each card so its center sits on the path,
+    instead of the top-left corner.
+  */
+  offset-anchor: center;
+
+  /*
+    This path is centered around the Skills title.
+    Negative x values move left of center.
+    Positive x values move right of center.
   */
   offset-path: path(
-    "M 500 260
-     C 420 120, 260 120, 200 260
-     C 260 400, 420 400, 500 260
-     C 580 120, 740 120, 800 260
-     C 740 400, 580 400, 500 260"
+    "M 0 0
+     C -90 -150, -330 -150, -390 0
+     C -330 150, -90 150, 0 0
+     C 90 -150, 330 -150, 390 0
+     C 330 150, 90 150, 0 0"
   );
 
   offset-rotate: 0deg;
+
+  animation: infinityMove 28s linear infinite;
+  z-index: 3;
 }
 
 .skill-card img {
@@ -570,7 +583,7 @@ body.dark-mode .about-text-card p {
 
 /* 
    Stagger each skill card so they are spread around the infinity path.
-   Negative animation-delay makes them start at different positions.
+   These delays are based on 14 skill cards and a 28s animation.
 */
 .skill-1 {
   animation-delay: 0s;
