@@ -494,7 +494,7 @@ body.dark-mode .about-text-card p {
 .infinity-carousel {
   position: relative;
   width: min(1000px, 95vw);
-  height: 520px;
+  height: 580px;
 }
 
 /* Skill Card — JS sets --tx and --ty each frame */

@@ -17,8 +17,8 @@
 (function () {
   const CARD_COUNT = 14;
   const PERIOD_MS  = 28000;   // one full loop = 28 s (matches original)
-  const A_X        = 560;     // horizontal half-width  of the figure-eight (px)
-  const A_Y        = 185;     // vertical   half-height of the figure-eight (px)
+  const A_X        = 390;     // horizontal half-width  of the figure-eight (px)
+  const A_Y        = 220;     // vertical   half-height of the figure-eight (px)
 
   let paused = false;
   let startTime = null;
